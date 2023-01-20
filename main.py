@@ -3,7 +3,6 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi import FastAPI, File, UploadFile
 from PIL import Image
-from PIL import ImageDraw
 import numpy as np
 from typing import List, Tuple
 
