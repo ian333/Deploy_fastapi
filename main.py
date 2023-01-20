@@ -51,14 +51,29 @@ async def svm_predict(data:IrisInput):
     prediction = svm_model.predict(data)
     return {"prediction": prediction}
 
-#@app.post("/dbscan/predict")
-#async def dbscan_predict(data: List[Tuple[float,float]]):
-#    # Hacer predicciones utilizando el modelo DBSCAN
-#    prediction = dbscan_model.fit_predict(data)
- #   return {"prediction": prediction}
+@app.post("/dbscan/predict")
+async def dbscan_predict(data: List[Tuple[float,float]]):
+    # Hacer predicciones utilizando el modelo DBSCAN
+    prediction = dbscan_model.fit_predict(data)
+    return {"prediction": prediction}
 
 
 
+@app.post("/dbscan_2_2/predict")
+async def dbscan_predict(data: List[Tuple[float,float]]):
+    # Hacer predicciones utilizando el modelo DBSCAN
+    prediction = dbscan_model.fit_predict(data)
+    return {"prediction": prediction}
+
+
+
+
+
+@app.post("/dbscan_3_2/predict")
+async def dbscan_predict(data: List[Tuple[float,float]]):
+    # Hacer predicciones utilizando el modelo DBSCAN
+    prediction = dbscan_model.fit_predict(data)
+    return {"prediction": prediction}
 
 
 
