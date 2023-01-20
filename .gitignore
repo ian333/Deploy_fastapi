@@ -1,9 +1,9 @@
 env/
 *__pycache__/
 
-.Identifier
+*.Identifier
 
 carpeta_demo/*
 
-
+*.pem
 *.env
