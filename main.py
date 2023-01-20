@@ -29,13 +29,21 @@ mnist_model = joblib.load("mnist_model.pkl")
 
 @app.post("/mnist")
 async def predict_mnist(img: UploadFile = File(...)):
+    # Open the image file
     img = Image.open(img.file)
+    # Resize the image to 28x28 pixels
     img = img.resize((28, 28))
+    # Convert the image to grayscale
     img = img.convert("L")
+    # Convert the image to a numpy array
     img = np.array(img)
+    # Flatten the array for the model
     img = img.flatten()
+    # Reshape the array to (1, 784)
     img = img.reshape(1, -1)
+    # Make a prediction using the MNIST model
     result = mnist_model.predict(img)
+    # Return the predicted number as an integer
     return {"number": int(result[0])}
 
 
